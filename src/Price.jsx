@@ -5,9 +5,8 @@ export default function Price() {
     const [price, setPrice] = useState(0)
 
     useEffect(() => {
-        api.get('stock/aapl/price')
+        api.get('/stock/aapl/price')
         .then(response => {
-            console.log(response)
             setPrice(response.data)
         })
     }, [])
