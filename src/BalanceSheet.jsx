@@ -41,6 +41,7 @@ export default function BalanceSheet() {
 
     return (
         <div>
+            <h1>Balance Sheet</h1>
             {Object.keys(balancesheet).map(key => 
                 <p key={key}>{key}: {balancesheet[key]}</p> 
             )}
