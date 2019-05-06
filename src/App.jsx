@@ -8,6 +8,8 @@ import Collections from './Collections'
 import Company from './Company'
 import DelayedQuote from './DelayedQuote'
 import Dividends from './Dividends'
+import Earnings from './Earnings'
+import EarningsToday from './EarningsToday'
 
 export default function App() {
     const [activeEndpoint, setActiveEndpoint] = useState('price')
@@ -52,6 +54,14 @@ export default function App() {
                 <button onClick={() => setActiveEndpoint('dividends')}>
                     Dividends
                 </button>
+
+                <button onClick={() => setActiveEndpoint('earnings')}>
+                    Earnings
+                </button>
+
+                <button onClick={() => setActiveEndpoint('earningsToday')}>
+                    Earnings Today
+                </button>
             </p>
 
             {activeEndpoint === 'price' && <Price />}
@@ -63,6 +73,8 @@ export default function App() {
             {activeEndpoint === 'company' && <Company />}
             {activeEndpoint === 'delayedQuote' && <DelayedQuote />}
             {activeEndpoint === 'dividends' && <Dividends />}
+            {activeEndpoint === 'earnings' && <Earnings />}
+            {activeEndpoint === 'earningsToday' && <EarningsToday />}
 
         </div>
     )
