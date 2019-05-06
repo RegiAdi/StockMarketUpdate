@@ -13,6 +13,8 @@ export default function Dividends() {
 
     return (
         <div>
+            <h1>Dividends</h1>
+
             {dividends.map((dividend, index) =>
                 <ul key={index}>
                     {index}
