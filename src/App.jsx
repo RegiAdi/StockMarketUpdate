@@ -5,6 +5,9 @@ import BatchRequests from './BatchRequests'
 import Book from './Book'
 import CashFlow from './CashFlow'
 import Collections from './Collections'
+import Company from './Company'
+import DelayedQuote from './DelayedQuote'
+import Dividends from './Dividends'
 
 export default function App() {
     const [activeEndpoint, setActiveEndpoint] = useState('price')
@@ -37,6 +40,18 @@ export default function App() {
                 <button onClick={() => setActiveEndpoint('collections')}>
                     Collections (most active)
                 </button>
+
+                <button onClick={() => setActiveEndpoint('company')}>
+                    Company
+                </button>
+
+                <button onClick={() => setActiveEndpoint('delayedQuote')}>
+                    Delayed Quote
+                </button>
+
+                <button onClick={() => setActiveEndpoint('dividends')}>
+                    Dividends
+                </button>
             </p>
 
             {activeEndpoint === 'price' && <Price />}
@@ -45,6 +60,9 @@ export default function App() {
             {activeEndpoint === 'batchRequests' && <BatchRequests />}
             {activeEndpoint === 'cashFlow' && <CashFlow />}
             {activeEndpoint === 'collections' && <Collections />}
+            {activeEndpoint === 'company' && <Company />}
+            {activeEndpoint === 'delayedQuote' && <DelayedQuote />}
+            {activeEndpoint === 'dividends' && <Dividends />}
 
         </div>
     )

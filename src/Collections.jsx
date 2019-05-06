@@ -7,14 +7,12 @@ export default function Collections() {
     useEffect(() => {
         api.get('/stock/market/collection/list?collectionName=mostactive')
             .then(response => {
-                console.log(response.data)
                 setCollections(response.data)
             })
     }, [])
 
     return (
         <div>
-            {console.log(collections)}
             <h1>Collections (most active)</h1>
 
             {collections.map((mostactive, index) =>
