@@ -7,7 +7,6 @@ export default function EffectiveSpread() {
     useEffect(() => {
         api.get('/stock/aapl/effective-spread')
             .then(response => {
-                console.log(response.data)
                 setEffectiveSpread(response.data)
             })
     }, [])
@@ -15,9 +14,11 @@ export default function EffectiveSpread() {
     return (
         <div>
             <h1>Effective Spread</h1>
-            {console.log(effectiveSpread)}
+
             {effectiveSpread.map((spread, index) =>
                 <ul key={index}>
+                    {index}
+
                     {Object.keys(spread).map(key =>
                         <li key={key}>{key}: {spread[key]}</li>
                     )}

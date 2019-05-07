@@ -13,6 +13,9 @@ import EarningsToday from './EarningsToday'
 import EffectiveSpread from './EffectiveSpread'
 import Estimates from './Estimates'
 import HistoricalPrice from './HistoricalPrice'
+import IncomeStatement from './IncomeStatement'
+import IntradayPrices from './IntradayPrices'
+import IPOCalendar from './IPOCalendar'
 
 export default function App() {
     const [activeEndpoint, setActiveEndpoint] = useState('price')
@@ -77,6 +80,18 @@ export default function App() {
                 <button onClick={() => setActiveEndpoint('historicalPrice')}>
                     Historical Price
                 </button>
+
+                <button onClick={() => setActiveEndpoint('incomeStatement')}>
+                    Income Statement
+                </button>
+
+                <button onClick={() => setActiveEndpoint('intradayPrices')}>
+                    Intraday Prices
+                </button>
+
+                <button onClick={() => setActiveEndpoint('ipoCalendar')}>
+                    IPO Calendar
+                </button>
             </p>
 
             {activeEndpoint === 'price' && <Price />}
@@ -93,6 +108,9 @@ export default function App() {
             {activeEndpoint === 'effectiveSpread' && <EffectiveSpread />}
             {activeEndpoint === 'estimates' && <Estimates />}
             {activeEndpoint === 'historicalPrice' && <HistoricalPrice />}
+            {activeEndpoint === 'incomeStatement' && <IncomeStatement />}
+            {activeEndpoint === 'intradayPrices' && <IntradayPrices />}
+            {activeEndpoint === 'ipoCalendar' && <IPOCalendar />}
 
         </div>
     )

@@ -18,7 +18,6 @@ export default function EarningsToday() {
     return (
         <div>
             <h1>Earnings Today</h1>
-            {console.log(earningsToday)}
 
             <h2>BTO</h2>
             {earningsToday.bto.map((earning, index) =>
