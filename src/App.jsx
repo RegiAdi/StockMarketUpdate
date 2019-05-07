@@ -10,6 +10,9 @@ import DelayedQuote from './DelayedQuote'
 import Dividends from './Dividends'
 import Earnings from './Earnings'
 import EarningsToday from './EarningsToday'
+import EffectiveSpread from './EffectiveSpread'
+import Estimates from './Estimates'
+import HistoricalPrice from './HistoricalPrice'
 
 export default function App() {
     const [activeEndpoint, setActiveEndpoint] = useState('price')
@@ -62,6 +65,18 @@ export default function App() {
                 <button onClick={() => setActiveEndpoint('earningsToday')}>
                     Earnings Today
                 </button>
+
+                <button onClick={() => setActiveEndpoint('effectiveSpread')}>
+                    Effective Spread
+                </button>
+
+                <button onClick={() => setActiveEndpoint('estimates')}>
+                    Estimates
+                </button>
+
+                <button onClick={() => setActiveEndpoint('historicalPrice')}>
+                    Historical Price
+                </button>
             </p>
 
             {activeEndpoint === 'price' && <Price />}
@@ -75,6 +90,9 @@ export default function App() {
             {activeEndpoint === 'dividends' && <Dividends />}
             {activeEndpoint === 'earnings' && <Earnings />}
             {activeEndpoint === 'earningsToday' && <EarningsToday />}
+            {activeEndpoint === 'effectiveSpread' && <EffectiveSpread />}
+            {activeEndpoint === 'estimates' && <Estimates />}
+            {activeEndpoint === 'historicalPrice' && <HistoricalPrice />}
 
         </div>
     )
