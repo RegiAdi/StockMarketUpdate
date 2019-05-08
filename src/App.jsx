@@ -16,6 +16,10 @@ import HistoricalPrice from './HistoricalPrice'
 import IncomeStatement from './IncomeStatement'
 import IntradayPrices from './IntradayPrices'
 import IPOCalendar from './IPOCalendar'
+import KeyStats from './KeyStats'
+import LargestTrades from './LargestTrades'
+import List from './List'
+import Logo from './Logo'
 
 export default function App() {
     const [activeEndpoint, setActiveEndpoint] = useState('price')
@@ -92,6 +96,22 @@ export default function App() {
                 <button onClick={() => setActiveEndpoint('ipoCalendar')}>
                     IPO Calendar
                 </button>
+
+                <button onClick={() => setActiveEndpoint('keyStats')}>
+                    Key Stats
+                </button>
+
+                <button onClick={() => setActiveEndpoint('largestTrades')}>
+                    Largest Trades
+                </button>
+
+                <button onClick={() => setActiveEndpoint('list')}>
+                    List
+                </button>
+
+                <button onClick={() => setActiveEndpoint('logo')}>
+                    Logo
+                </button>
             </p>
 
             {activeEndpoint === 'price' && <Price />}
@@ -111,7 +131,10 @@ export default function App() {
             {activeEndpoint === 'incomeStatement' && <IncomeStatement />}
             {activeEndpoint === 'intradayPrices' && <IntradayPrices />}
             {activeEndpoint === 'ipoCalendar' && <IPOCalendar />}
-
+            {activeEndpoint === 'keyStats' && <KeyStats />}
+            {activeEndpoint === 'largestTrades' && <LargestTrades />}
+            {activeEndpoint === 'list' && <List />}
+            {activeEndpoint === 'logo' && <Logo />}
         </div>
     )
 }
