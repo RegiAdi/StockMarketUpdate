@@ -20,6 +20,8 @@ import KeyStats from './KeyStats'
 import LargestTrades from './LargestTrades'
 import List from './List'
 import Logo from './Logo'
+import MarketVolume from './MarketVolume'
+import News from './News'
 
 export default function App() {
     const [activeEndpoint, setActiveEndpoint] = useState('price')
@@ -112,6 +114,14 @@ export default function App() {
                 <button onClick={() => setActiveEndpoint('logo')}>
                     Logo
                 </button>
+
+                <button onClick={() => setActiveEndpoint('marketVolume')}>
+                    Market Volume
+                </button>
+
+                <button onClick={() => setActiveEndpoint('news')}>
+                    News
+                </button>
             </p>
 
             {activeEndpoint === 'price' && <Price />}
@@ -135,6 +145,8 @@ export default function App() {
             {activeEndpoint === 'largestTrades' && <LargestTrades />}
             {activeEndpoint === 'list' && <List />}
             {activeEndpoint === 'logo' && <Logo />}
+            {activeEndpoint === 'marketVolume' && <MarketVolume />}
+            {activeEndpoint === 'news' && <News />}
         </div>
     )
 }
